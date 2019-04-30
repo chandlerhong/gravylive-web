@@ -1,0 +1,30 @@
+﻿@model GravyLiveWebApp.WebApp.Models.OrderFulfillmentDetailsModel
+@{
+    ViewBag.Title = "Order Fulfillment Details for " + @Model.Show_Date.Date;
+}
+
+<h2>Order Fulfillment Data for Show Date: @Model.Show_Date.ToShortDateString()</h2>
+<h4>Product ID: @Model.Product_ID</h4>
+<h4>Product Description: @Model.Description</h4>
+<h4>Vendor: @Model.VendorName</h4>
+<div>&nbsp;</div>
+<h4>Orders for this show:</h4>
+<table class="table-responsive table-striped table">
+    <tr>
+        <th>Order No</th>
+        <th>Amount Paid</th>
+        <th>Full Name</th>
+        <th>Shipping Address</th>
+    </tr>
+
+    @foreach(var order in Model.Orders)
+    {
+    <tr>
+        <td>@order.OrderNum</td>
+        <td>@String.Format("{0:c}", @order.Price)</td>
+        <td>@order.Full_Name</td>
+        <td>@order.Shipping_Address</td>
+    </tr>
+    }
+</table>
+

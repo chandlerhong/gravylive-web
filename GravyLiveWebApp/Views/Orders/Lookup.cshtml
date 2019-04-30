@@ -1,0 +1,30 @@
+﻿@model GravyLiveWebApp.WebApp.Models.OrdersLookupModel
+@{
+    ViewBag.Title = "Look Up Orders for Fulfillment";
+}
+
+<h2>Look Up Orders for Fulfillment</h2>
+
+@using (Html.BeginForm("GetOrders", "Orders", FormMethod.Post))
+{
+    <div class="form-horizontal">
+        <!--START of Show Date form field -->
+        <form>
+            <div>
+                <label for="show">Date of show for report:</label>
+                <input type="date" id="show" name="Show_Date" min="" max="">
+            </div>
+        </form>
+        <!--END of Show Date form field -->
+        <!-- START Submit button-->
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-2 col-lg-1">
+                <button type="submit" class="btn btn-primary">Look Up Show</button>
+            </div>
+            <div class="col-md-offset-1 col-md-2 col-lg-1">
+                <button type="submit" class="btn btn-default">Cancel</button>
+            </div>
+        </div>
+        <!-- END Submit button-->
+    </div>
+}

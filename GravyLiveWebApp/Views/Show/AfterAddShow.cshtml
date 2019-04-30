@@ -1,0 +1,10 @@
+﻿@model GravyLiveWebApp.WebApp.Models.ShowViewModel
+@{
+    ViewBag.Title = "New Show Added";
+}
+
+<h2>Show Added!</h2>
+
+<div>Your show date is <strong>@Model.Show_Date.ToShortDateString()</strong>.</div>
+<div>The Product ID is <strong>@Model.Product_ID</strong> and the quantity is <strong>@Model.Product_Units</strong> and a cost of <strong>@String.Format("{0:c}", @Model.Unit_Cost)</strong>.</div>
+<div>The starting price will be <strong>@String.Format("{0:c}", @Model.Start_Price)</strong>.</div>
